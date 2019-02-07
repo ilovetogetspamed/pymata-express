@@ -1617,3 +1617,92 @@ class PymataExpress:
             current_command.append(next_command_byte)
             number_of_bytes -= 1
         return current_command
+
+
+    # Onewire Functions
+
+    async def onewire_init(self, pin):
+        """
+        This is FirmataExpress feature.
+
+        Set the analog/digital pin to Onewire mode.
+        Create the OneWire object, using a specific pin. Even though you can connect many 1 wire devices to the same
+        pin, if you have a large number, smaller groups each on their own pin can help isolate wiring problems.
+        You can create multiple OneWire objects, one for each pin.
+
+        :param pin_number: arduino pin number
+
+        :returns: OneWire object
+        """
+        pass
+
+    async def onewire_search(self):
+        """
+        This is a FirmataExpress feature
+
+        Search for the next device. The addrArray is an 8 byte array. If a device is found, addrArray is filled with
+        the device's address and true is returned. If no more devices are found, false is returned.
+
+        :returns: addrArray or False??
+        """
+        pass
+
+    async def onewire_reset_search(self):
+        """
+        This is a FirmataExpress feature
+
+        Begin a new search. The next use of search will begin at the first device.
+        """
+        pass
+
+    async def onewire_reset(self):
+        """
+        This is a FirmataExpress feature
+
+        Reset the 1-wire bus. Usually this is needed before communicating with any device.
+        """
+        pass
+
+    async def onewire_select(self, address):
+        """
+        This is a FirmataExpress feature
+
+        Select a device based on its address. After a reset, this is needed to choose which device you will use,
+        and then all communication will be with that device, until another reset.
+        """
+        pass
+
+    async def onewire_skip(self):
+        """
+        This is a FirmataExpress feature
+
+        Skip the device selection. This only works if you have a single device, but you can avoid searching and
+        use this to immediately access your device.
+        """
+        pass
+
+    async def onewire_write(self, byte, leave_power_applied=False):
+        """
+        This is a FirmataExpress feature
+
+        Write a byte.  If leave_power_applied is True: write a byte, and leave power applied to the 1 wire bus.
+        """
+        pass
+
+    async def onewire_read(self, byte):
+        """
+        This is a FirmataExpress feature
+
+        Read a byte.
+        """
+        pass
+
+    async def onewire_crc8(self, data, length):
+        """
+        This is a FirmataExpress feature
+
+        Compute a CRC check on an array of data.
+
+        :returns: crc
+        """
+        pass

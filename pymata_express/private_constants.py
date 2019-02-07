@@ -93,7 +93,7 @@ class PrivateConstants:
     STEPPER_STEP = 1  # command a motor to move at the provided speed
     STEPPER_LIBRARY_VERSION = 2  # used to get stepper library version number
 
-# pin modes
+    # pin modes
     INPUT = 0x00  # pin set as input
     OUTPUT = 0x01  # pin set as output
     ANALOG = 0x02  # analog pin in analogInput mode
@@ -122,3 +122,18 @@ class PrivateConstants:
     I2C_END_TX_MASK = 0B01000000
     I2C_STOP_TX = 1
     I2C_RESTART_TX = 0
+
+    # OneWire Commands
+    ONEWIRE_INIT = 0            # Create the OneWire object, using a specific pin. You can create multiple OneWire objects, one for each pin.
+    ONEWIRE_SEARCH = 1          # Search for the next device.  If no more devices are found, false is returned.
+    ONEWIRE_RESET_SEARCH = 2    # Begin a new search. The next use of search will begin at the first device.
+    ONEWIRE_RESET = 3           # Reset the 1-wire bus. Usually this is needed before communicating with any device.
+    ONEWIRE_SELECT = 4          # Select a device based on its address. After a reset, this is needed to choose which
+                                # device you will use, and then all communication will be with that device, until another reset.
+    ONEWIRE_SKIP = 5            # Skip the device selection. This only works if you have a single device, but you can
+                                # avoid searching and use this to immediately access your device.
+    ONEWIRE_WRITE = 6           # Write a byte.
+    ONEWIRE_WRITE_POWER = 7     # Write a byte, and leave power applied to the 1 wire bus.
+    ONEWIRE_READ = 8            # Read a byte.
+    ONEWIRE_CRC8 = 9            # Compute a CRC check on an array of data.
+
